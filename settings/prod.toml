@@ -1,0 +1,53 @@
+env = "test"
+private_key = "60936fbda7fbe784c08e8c83a75b20235ac75699dedfb461f6c4c8c86b2d76f2"
+cold_wallet_address = "0xF896381A99a324C25A55951ce67f65362874256b"
+gas_limit = 100000
+gas_price = 100000000
+native_token = "MATIC"
+
+token_collect_fee= 10000000000000000
+eth_collect_fee =  100000000000000000
+auto_collect = true
+auto_fee =true
+[transport.http]
+addr = ":9000"
+read_timeout = 0.5
+read_header_timeout = 1
+write_timeout = 10
+idle_timeout = 30
+
+[[mysql]]
+name = "chain"
+[mysql.master]
+#dsn = "testuser:auyeVj43F6PssvDbDt9E@tcp(47.106.219.174:3306)/chain?charset=utf8mb4&parseTime=True&loc=Local"
+dsn = "test1:tiger@tcp(127.0.0.1:3306)/chain?charset=utf8mb4&parseTime=True&loc=Local"
+max_open_conns = 1
+max_idle_conns = 10
+max_life_conns = 60
+
+[[redis]]
+name = "chain"
+addr = "127.0.0.1:6379"
+pwd = ""
+db = 3
+dial_timeout = 1
+read_timeout = 1
+write_timeout = 1
+pool_size = 1000
+min_idle_conns = 100
+max_retries = 1
+
+[log]
+file_path = ""
+level = ""
+
+[ccm_network]
+url = "https://rpc-mumbai.maticvigil.com"
+#url = "http://123.58.217.221:9933"
+
+[httpclient.base]
+url = "http://127.0.0.1:9466"
+#url = "http://120.79.94.42:9466"
+key = "12345678"
+
+
